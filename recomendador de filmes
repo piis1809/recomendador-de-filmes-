@@ -1,0 +1,46 @@
+//ação, terror, mistério, comédia,fantasia
+                                                                                          
+//Terremoto: A falha de san andreas,12,ação
+//fuja,16,terror/mistério
+//Verdade ou desafio, 14,terror/ação
+//Eu queria ter a sua vida,16,comédia/fantasia
+//Invocação do mal,14,terror/mistério
+//Aves de Rapina,16,ação/comédia  
+
+let campoidade;
+let campofantasia;
+let campoaventura;
+
+function setup() {
+  createCanvas(800, 400);
+  createElement("h2", "recomendador de filmes");
+createSpan("sua idade");
+  campoidade = createInput("5");
+  campofantasia = createCheckbox("gosta de fantasia?");
+  campofantasia = createCheckbox("gosta de fantasia?");
+}
+
+function draw() {
+  background(220);
+  let idade = campoidade.value();
+  let gostadefantasia = campofantasia.checked();
+ let recomendacao = gerarecomendacao(idade, gostadefantasia);
+ text(recomendacao,width/2, height/2)
+}
+function gerarecomendacao(idade, gostadefantasia, gostadeaventura) {
+  if(idade >= 10){
+    if (idade >= 14) {
+      return "terremoto: A falha de san andreas";
+    } else {
+      if(idade >= 12) {
+      if(gostadefantasia || gostadeaventura){
+        return "fuja";
+      } else{
+        return "Verdade ou desafio";
+      }
+    }
+    return "eu queria ter sua vida";
+  } 
+ return  
+}
+  }
